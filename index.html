@@ -70,77 +70,252 @@
         color: #777;
         margin-top: 4px;
     }
+    .lang-switch {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 12px 0 8px 0;
+        flex-wrap: wrap;
+    }
+    .lang-btn {
+        border: 1px solid #007BFF;
+        background: white;
+        color: #007BFF;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        cursor: pointer;
+        font-family: inherit;
+    }
+    .lang-btn.active {
+        background: #007BFF;
+        color: white;
+    }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>🏡 Self Check-in Guide - C/ Azucena, 6 - Estepona</h1>
-
-<img class="hero-img" src="images/DSC04404.jpg" alt="Flower-lined street with fountain in Estepona old town">
-
-<h2>🔑 Access</h2>
-<div class="card">
-<p>Once you arrive at the house at <strong>C/ Azucena, 6</strong>, the key will be inside the key box.</p>
-<p><span class="highlight">Code to open:</span> *****</p>
-<img src="images/PSPh_3063.jpg" alt="Street view of the house entrance at Calle Azucena 6">
-<p class="photo-caption">This is what the street and front door look like — number 6 is just above the door.</p>
+<h1><span data-i18n="page_title">🏡 Self Check-in Guide</span> - C/ Azucena, 6 - Estepona</h1>
+<div class="lang-switch">
+<button class="lang-btn" data-lang-btn="en" onclick="setLanguage('en')">🇬🇧 EN</button>
+<button class="lang-btn" data-lang-btn="es" onclick="setLanguage('es')">🇪🇸 ES</button>
+<button class="lang-btn" data-lang-btn="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+<button class="lang-btn" data-lang-btn="de" onclick="setLanguage('de')">🇩🇪 DE</button>
 </div>
-
-<h2>🏠 The House</h2>
+<img class="hero-img" src="images/DSC04404.jpg" data-i18n-alt="hero_alt" alt="Flower-lined street with fountain in Estepona old town">
+<h2 data-i18n="access_h2">🔑 Access</h2>
 <div class="card">
-<p>A quick look inside before you arrive:</p>
+<p data-i18n-html="access_intro">Once you arrive at the house at <strong>C/ Azucena, 6</strong>, the key will be inside the key box.</p>
+<p data-i18n-html="access_code"><span class="highlight">Code to open:</span> You'll receive this in a separate message from us shortly before your arrival.</p>
+<img src="images/PSPh_3063.jpg" data-i18n-alt="access_photo_alt" alt="Street view of the house entrance at Calle Azucena 6">
+<p class="photo-caption" data-i18n="access_caption">This is what the street and front door look like — number 6 is just above the door.</p>
+</div>
+<h2 data-i18n="house_h2">🏠 The House</h2>
+<div class="card">
+<p data-i18n="house_intro">A quick look inside before you arrive:</p>
 <div class="photo-row">
-<img src="images/PSPh_3143.jpg" alt="Kitchen and staircase to the upper floor">
-<img src="images/PSPh_3193.jpg" alt="Bedroom with balcony door">
+<img src="images/PSPh_3143.jpg" data-i18n-alt="house_alt1" alt="Kitchen and staircase to the upper floor">
+<img src="images/PSPh_3193.jpg" data-i18n-alt="house_alt2" alt="Bedroom with balcony door">
 </div>
 </div>
-
 <h2>📶 Wi-Fi</h2>
 <div class="card">
-<p><strong>Network:</strong> Casita</p>
-<p><strong>Password:</strong> estepona</p>
+<p><strong data-i18n="wifi_network_label">Network:</strong> Casita</p>
+<p><strong data-i18n="wifi_password_label">Password:</strong> estepona</p>
 </div>
-
-<h2>🛏️ Essentials</h2>
+<h2 data-i18n="essentials_h2">🛏️ Essentials</h2>
 <div class="card">
-<p>Extra towels and bed sheets are available in the living room cupboard.</p>
+<p data-i18n="essentials_text">Extra towels and bed sheets are available in the living room cupboard.</p>
 </div>
-
-<h2>🚗 Parking</h2>
+<h2 data-i18n="parking_h2">🚗 Parking</h2>
 <div class="card">
 <p>
-<a href="https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6" target="_blank">Town Hall Parking</a> (most affordable)
+<a href="https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6" target="_blank" data-i18n="parking_link1">Town Hall Parking</a> <span data-i18n="parking_note1">(most affordable)</span>
 </p>
 <p>
-<a href="https://maps.app.goo.gl/Vnp1BmeYDKk326dLA" target="_blank">Beach Promenade Parking</a>
+<a href="https://maps.app.goo.gl/Vnp1BmeYDKk326dLA" target="_blank" data-i18n="parking_link2">Beach Promenade Parking</a>
 </p>
-<p>Street parking in Estepona is free.</p>
+<p data-i18n="parking_street_text">Street parking in Estepona is free.</p>
 <p>
-I usually park about a 10-minute walk away:<br>
-<a href="https://maps.app.goo.gl/U8qta5Nyz2izJV1s8" target="_blank">Directions here</a>
+<span data-i18n="parking_usual_text">I usually park about a 10-minute walk away:</span><br>
+<a href="https://maps.app.goo.gl/U8qta5Nyz2izJV1s8" target="_blank" data-i18n="parking_directions">Directions here</a>
 </p>
 </div>
-
-<h2>🛒 Nearby Supermarkets</h2>
+<h2 data-i18n="supermarkets_h2">🛒 Nearby Supermarkets</h2>
 <div class="card">
 <ul>
-<li>Carrefour Express</li>
-<li>Carrefour Market</li>
-<li>Supermercado Dia</li>
+<li><a href="https://maps.app.goo.gl/shTXWpfKMjPco9k18" target="_blank">Carrefour Express</a></li>
+<li><a href="https://maps.app.goo.gl/AXoeSoYBudSyCaXF7" target="_blank">Carrefour Market</a></li>
+<li><a href="https://maps.app.goo.gl/UGKmsryvUuEre7sU6" target="_blank">Supermercado Dia</a></li>
 </ul>
 </div>
-
-<h2>📞 Contact</h2>
+<h2 data-i18n="contact_h2">📞 Contact</h2>
 <div class="card">
-<p>If you need anything, feel free to contact us:</p>
+<p data-i18n="contact_text">If you need anything, feel free to contact us:</p>
 <p><strong>+34 684 335 725</strong></p>
 </div>
-
-<h2>😊 Enjoy your stay!</h2>
+<h2 data-i18n="enjoy_h2">😊 Enjoy your stay!</h2>
 <div class="card">
-<img src="images/PSPh_3233.jpg" alt="Balcony and artwork detail inside the house">
+<img src="images/PSPh_3233.jpg" data-i18n-alt="enjoy_alt" alt="Balcony and artwork detail inside the house">
+</div>
 </div>
 
-</div>
+<script>
+const translations = {
+  en: {
+    tab_title: "Self Check-in Guide",
+    page_title: "🏡 Self Check-in Guide",
+    hero_alt: "Flower-lined street with fountain in Estepona old town",
+    access_h2: "🔑 Access",
+    access_intro: "Once you arrive at the house at <strong>C/ Azucena, 6</strong>, the key will be inside the key box.",
+    access_code: "<span class='highlight'>Code to open:</span> You'll receive this in a separate message from us shortly before your arrival.",
+    access_photo_alt: "Street view of the house entrance at Calle Azucena 6",
+    access_caption: "This is what the street and front door look like — number 6 is just above the door.",
+    house_h2: "🏠 The House",
+    house_intro: "A quick look inside before you arrive:",
+    house_alt1: "Kitchen and staircase to the upper floor",
+    house_alt2: "Bedroom with balcony door",
+    wifi_network_label: "Network:",
+    wifi_password_label: "Password:",
+    essentials_h2: "🛏️ Essentials",
+    essentials_text: "Extra towels and bed sheets are available in the living room cupboard.",
+    parking_h2: "🚗 Parking",
+    parking_link1: "Town Hall Parking",
+    parking_note1: "(most affordable)",
+    parking_link2: "Beach Promenade Parking",
+    parking_street_text: "Street parking in Estepona is free.",
+    parking_usual_text: "I usually park about a 10-minute walk away:",
+    parking_directions: "Directions here",
+    supermarkets_h2: "🛒 Nearby Supermarkets",
+    contact_h2: "📞 Contact",
+    contact_text: "If you need anything, feel free to contact us:",
+    enjoy_h2: "😊 Enjoy your stay!",
+    enjoy_alt: "Balcony and artwork detail inside the house"
+  },
+  es: {
+    tab_title: "Guía de Check-in",
+    page_title: "🏡 Guía de Check-in",
+    hero_alt: "Calle con flores y fuente en el casco antiguo de Estepona",
+    access_h2: "🔑 Acceso",
+    access_intro: "Cuando llegues a la casa en <strong>C/ Azucena, 6</strong>, encontrarás la llave dentro de la caja de seguridad.",
+    access_code: "<span class='highlight'>Código de apertura:</span> Lo recibirás en un mensaje aparte poco antes de tu llegada.",
+    access_photo_alt: "Vista de la calle de la entrada de la casa en Calle Azucena 6",
+    access_caption: "Así es como se ve la calle y la puerta principal — el número 6 está justo encima de la puerta.",
+    house_h2: "🏠 La Casa",
+    house_intro: "Un vistazo al interior antes de tu llegada:",
+    house_alt1: "Cocina y escalera al piso superior",
+    house_alt2: "Dormitorio con puerta al balcón",
+    wifi_network_label: "Red:",
+    wifi_password_label: "Contraseña:",
+    essentials_h2: "🛏️ Lo Esencial",
+    essentials_text: "Encontrarás toallas y sábanas extra en el armario del salón.",
+    parking_h2: "🚗 Aparcamiento",
+    parking_link1: "Parking del Ayuntamiento",
+    parking_note1: "(el más económico)",
+    parking_link2: "Parking Paseo Marítimo",
+    parking_street_text: "El aparcamiento en la calle en Estepona es gratuito.",
+    parking_usual_text: "Normalmente aparco a unos 10 minutos a pie:",
+    parking_directions: "Indicaciones aquí",
+    supermarkets_h2: "🛒 Supermercados Cercanos",
+    contact_h2: "📞 Contacto",
+    contact_text: "Si necesitas cualquier cosa, no dudes en contactarnos:",
+    enjoy_h2: "😊 ¡Disfruta tu estancia!",
+    enjoy_alt: "Detalle del balcón y obra de arte dentro de la casa"
+  },
+  fr: {
+    tab_title: "Guide d'arrivée",
+    page_title: "🏡 Guide d'Arrivée Autonome",
+    hero_alt: "Rue fleurie avec fontaine dans la vieille ville d'Estepona",
+    access_h2: "🔑 Accès",
+    access_intro: "Une fois arrivé(e) à la maison au <strong>C/ Azucena, 6</strong>, vous trouverez la clé dans la boîte à clés.",
+    access_code: "<span class='highlight'>Code d'ouverture :</span> Vous le recevrez dans un message séparé juste avant votre arrivée.",
+    access_photo_alt: "Vue de la rue de l'entrée de la maison au Calle Azucena 6",
+    access_caption: "Voici à quoi ressemble la rue et la porte d'entrée — le numéro 6 se trouve juste au-dessus de la porte.",
+    house_h2: "🏠 La Maison",
+    house_intro: "Un aperçu de l'intérieur avant votre arrivée :",
+    house_alt1: "Cuisine et escalier menant à l'étage supérieur",
+    house_alt2: "Chambre avec porte donnant sur le balcon",
+    wifi_network_label: "Réseau :",
+    wifi_password_label: "Mot de passe :",
+    essentials_h2: "🛏️ L'Essentiel",
+    essentials_text: "Des serviettes et draps supplémentaires sont disponibles dans le placard du salon.",
+    parking_h2: "🚗 Stationnement",
+    parking_link1: "Parking de la Mairie",
+    parking_note1: "(le plus économique)",
+    parking_link2: "Parking du Front de Mer",
+    parking_street_text: "Le stationnement dans la rue à Estepona est gratuit.",
+    parking_usual_text: "Je me gare habituellement à environ 10 minutes à pied :",
+    parking_directions: "Itinéraire ici",
+    supermarkets_h2: "🛒 Supermarchés à Proximité",
+    contact_h2: "📞 Contact",
+    contact_text: "Si vous avez besoin de quoi que ce soit, n'hésitez pas à nous contacter :",
+    enjoy_h2: "😊 Profitez de votre séjour !",
+    enjoy_alt: "Détail du balcon et d'une œuvre d'art à l'intérieur de la maison"
+  },
+  de: {
+    tab_title: "Check-in-Anleitung",
+    page_title: "🏡 Check-in-Anleitung",
+    hero_alt: "Blumengeschmückte Straße mit Brunnen in der Altstadt von Estepona",
+    access_h2: "🔑 Zugang",
+    access_intro: "Sobald Sie am Haus in der <strong>C/ Azucena, 6</strong> ankommen, finden Sie den Schlüssel in der Schlüsselbox.",
+    access_code: "<span class='highlight'>Code zum Öffnen:</span> Sie erhalten diesen kurz vor Ihrer Ankunft in einer separaten Nachricht.",
+    access_photo_alt: "Straßenansicht des Hauseingangs in der Calle Azucena 6",
+    access_caption: "So sieht die Straße und die Eingangstür aus — die Hausnummer 6 befindet sich direkt über der Tür.",
+    house_h2: "🏠 Das Haus",
+    house_intro: "Ein kurzer Blick ins Innere vor Ihrer Ankunft:",
+    house_alt1: "Küche und Treppe zum Obergeschoss",
+    house_alt2: "Schlafzimmer mit Balkontür",
+    wifi_network_label: "Netzwerk:",
+    wifi_password_label: "Passwort:",
+    essentials_h2: "🛏️ Das Wichtigste",
+    essentials_text: "Zusätzliche Handtücher und Bettwäsche finden Sie im Schrank im Wohnzimmer.",
+    parking_h2: "🚗 Parken",
+    parking_link1: "Parkplatz Rathaus",
+    parking_note1: "(am günstigsten)",
+    parking_link2: "Parkplatz Strandpromenade",
+    parking_street_text: "Straßenparken in Estepona ist kostenlos.",
+    parking_usual_text: "Ich parke normalerweise etwa 10 Gehminuten entfernt:",
+    parking_directions: "Wegbeschreibung hier",
+    supermarkets_h2: "🛒 Supermärkte in der Nähe",
+    contact_h2: "📞 Kontakt",
+    contact_text: "Falls Sie etwas benötigen, kontaktieren Sie uns gerne:",
+    enjoy_h2: "😊 Wir wünschen Ihnen einen schönen Aufenthalt!",
+    enjoy_alt: "Detailansicht von Balkon und Kunstwerk im Haus"
+  }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-alt');
+        if (translations[lang] && translations[lang][key] !== undefined) {
+            el.alt = translations[lang][key];
+        }
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+    });
+    document.documentElement.lang = lang;
+    document.title = translations[lang].tab_title + " - Estepona";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var browserLang = (navigator.language || 'en').slice(0,2).toLowerCase();
+    var supported = ['en','es','fr','de'];
+    var initialLang = supported.indexOf(browserLang) !== -1 ? browserLang : 'en';
+    setLanguage(initialLang);
+});
+</script>
 </body>
 </html>
