@@ -62,7 +62,8 @@ h2 {
 }
 
 .photo-row img {
-  width: 50%;
+  flex: 1;
+  min-width: 0;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 12px;
@@ -116,34 +117,34 @@ a {
 <h1 data-i18n="title">🏡 Self Check-in Guide</h1>
 
 <div class="lang-switch">
-<button class="lang-btn" onclick="setLanguage('en')">EN</button>
-<button class="lang-btn" onclick="setLanguage('es')">ES</button>
-<button class="lang-btn" onclick="setLanguage('fr')">FR</button>
-<button class="lang-btn" onclick="setLanguage('de')">DE</button>
+<button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+<button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
+<button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+<button class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
 </div>
 
 <!-- HERO -->
-<img class="hero-img" src="images/DSC04404.jpg">
+<img class="hero-img" src="images/DSC04404.jpg" alt="House exterior at C/ Azucena 6">
 
 <h2 data-i18n="access">🔑 Access</h2>
 <div class="card">
 <p data-i18n-html="access_text"></p>
 <p data-i18n="access_code"></p>
-<img src="images/PSPh_3063.jpg">
+<img src="images/PSPh_3063.jpg" alt="Lockbox at the entrance">
 </div>
 
 <h2 data-i18n="house">🏠 The House</h2>
 <div class="card">
 <div class="photo-row">
-<img src="images/PSPh_3143.jpg">
-<img src="images/PSPh_3193.jpg">
+<img src="images/PSPh_3143.jpg" alt="Interior view of the house">
+<img src="images/PSPh_3193.jpg" alt="Interior view of the house">
 </div>
 </div>
 
-<h2>📶 Wi-Fi</h2>
+<h2 data-i18n="wifi">📶 Wi-Fi</h2>
 <div class="card">
-<p><strong>Network:</strong> Casita</p>
-<p><strong>Password:</strong> estepona</p>
+<p><strong data-i18n="wifi_network_label">Network:</strong> Casita</p>
+<p><strong data-i18n="wifi_password_label">Password:</strong> estepona</p>
 </div>
 
 <h2 data-i18n="ac">❄️ Air Conditioning & Heating</h2>
@@ -153,7 +154,7 @@ a {
 
 <h2 data-i18n="parking">🚗 Parking</h2>
 <div class="card">
-<p data-i18n="parking_text"></p>
+<div data-i18n-html="parking_text"></div>
 </div>
 
 <h2 data-i18n="supermarkets">🛒 Supermarkets</h2>
@@ -168,8 +169,8 @@ a {
 <h2 data-i18n="guide">📍 Local Guide</h2>
 <div class="card">
 <p data-i18n="guide_text"></p>
-<p>👉 <a href="https://maps.app.goo.gl/HMr3f7wAdSFDgdmGA" target="_blank">Restaurants & Spots</a></p>
-<p>👉 <a href="https://maps.app.goo.gl/56Yh8cR3Par8S8hLA" target="_blank">Places to Visit</a></p>
+<p>👉 <a href="https://maps.app.goo.gl/HMr3f7wAdSFDgdmGA" target="_blank" data-i18n="guide_link1">Restaurants & Spots</a></p>
+<p>👉 <a href="https://maps.app.goo.gl/56Yh8cR3Par8S8hLA" target="_blank" data-i18n="guide_link2">Places to Visit</a></p>
 </div>
 
 <h2 data-i18n="contact">📞 Contact</h2>
@@ -180,13 +181,13 @@ a {
 
 <h2 data-i18n="enjoy">😊 Enjoy your stay!</h2>
 <div class="card">
-<img src="images/PSPh_3233.jpg">
+<img src="images/PSPh_3233.jpg" alt="Welcoming view of the house">
 </div>
 
 </div>
 
 <a class="whatsapp-btn" href="https://wa.me/34684335725?text=Hi%20Leandro,%20we%20just%20arrived" target="_blank">
-💬 Contact host
+<span data-i18n="whatsapp_btn">💬 Contact host</span>
 </a>
 
 <script>
@@ -199,13 +200,19 @@ access_code:"The access code will be sent shortly before your arrival.",
 ac:"❄️ Air Conditioning & Heating",
 ac_text:"Please ensure all windows and doors are fully closed when using the air conditioning or heating. Otherwise, the system may shut down automatically. If the red light next to the A/C unit is on, it usually means a window or door is still open.",
 parking:"🚗 Parking",
-parking_text:"Street parking is free. Paid options are also available nearby.",
+parking_text:"<p>Parking around here is easy and mostly free. If you'd rather have a guaranteed spot, there are two paid car parks nearby:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Town Hall Parking</strong></a> – the most affordable option in the area</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Beach Promenade Parking</strong></a></li></ul><p>Street parking in Estepona is free of charge. I usually leave my own car in a spot about a 10-minute walk from the house — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>tap here for directions</a>.</p>",
 supermarkets:"🛒 Supermarkets",
+wifi:"📶 Wi-Fi",
+wifi_network_label:"Network:",
+wifi_password_label:"Password:",
 guide:"📍 Local Guide",
 guide_text:"Our favorite local spots and places to explore:",
+guide_link1:"Restaurants & Spots",
+guide_link2:"Places to Visit",
 contact:"📞 Contact",
 contact_text:"Feel free to contact me anytime during your stay.",
-enjoy:"😊 Enjoy your stay!"
+enjoy:"😊 Enjoy your stay!",
+whatsapp_btn:"💬 Contact host"
 },
 es:{
 title:"🏡 Guía de Check-in",
@@ -215,13 +222,19 @@ access_code:"El código se enviará antes de tu llegada.",
 ac:"❄️ Aire Acondicionado y Calefacción",
 ac_text:"Asegúrate de cerrar puertas y ventanas. Si la luz roja está encendida, significa que algo está abierto.",
 parking:"🚗 Aparcamiento",
-parking_text:"Aparcamiento gratuito en la calle.",
+parking_text:"<p>Aparcar por la zona es fácil y, en su mayoría, gratuito. Si prefieres tener una plaza garantizada, hay dos parkings de pago cerca:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Parking del Ayuntamiento</strong></a> – la opción más económica de la zona</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parking del Paseo Marítimo</strong></a></li></ul><p>Aparcar en la calle en Estepona es gratis. Yo suelo dejar mi coche en una zona a unos 10 minutos a pie de la casa — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>pulsa aquí para ver cómo llegar</a>.</p>",
 supermarkets:"🛒 Supermercados",
+wifi:"📶 Wi-Fi",
+wifi_network_label:"Red:",
+wifi_password_label:"Contraseña:",
 guide:"📍 Guía Local",
 guide_text:"Nuestros sitios favoritos:",
+guide_link1:"Restaurantes y lugares",
+guide_link2:"Sitios para visitar",
 contact:"📞 Contacto",
 contact_text:"Contáctame si necesitas algo.",
-enjoy:"😊 ¡Disfruta tu estancia!"
+enjoy:"😊 ¡Disfruta tu estancia!",
+whatsapp_btn:"💬 Contactar al anfitrión"
 },
 fr:{
 title:"🏡 Guide d'arrivée",
@@ -231,13 +244,19 @@ access_code:"Code envoyé avant arrivée.",
 ac:"❄️ Climatisation",
 ac_text:"Fermez portes et fenêtres. Lumière rouge = ouvert.",
 parking:"🚗 Stationnement",
-parking_text:"Parking gratuit.",
+parking_text:"<p>Le stationnement dans le quartier est facile et la plupart du temps gratuit. Si vous préférez une place garantie, deux parkings payants se trouvent à proximité :</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Parking de la Mairie</strong></a> – l'option la plus économique du secteur</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parking du Front de Mer</strong></a></li></ul><p>Le stationnement dans la rue à Estepona est gratuit. Je laisse généralement ma voiture dans un coin à environ 10 minutes à pied de la maison — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>cliquez ici pour l'itinéraire</a>.</p>",
 supermarkets:"🛒 Supermarchés",
+wifi:"📶 Wi-Fi",
+wifi_network_label:"Réseau :",
+wifi_password_label:"Mot de passe :",
 guide:"📍 Guide Local",
 guide_text:"Nos recommandations:",
+guide_link1:"Restaurants & lieux",
+guide_link2:"Lieux à visiter",
 contact:"📞 Contact",
 contact_text:"Contactez-moi à tout moment.",
-enjoy:"😊 Bon séjour !"
+enjoy:"😊 Bon séjour !",
+whatsapp_btn:"💬 Contacter l'hôte"
 },
 de:{
 title:"🏡 Check-in Anleitung",
@@ -247,17 +266,27 @@ access_code:"Code vor Ankunft.",
 ac:"❄️ Klimaanlage",
 ac_text:"Fenster und Türen schließen. Rotes Licht = offen.",
 parking:"🚗 Parken",
-parking_text:"Straßenparken kostenlos.",
+parking_text:"<p>Parken in der Umgebung ist unkompliziert und meist kostenlos. Wer einen garantierten Platz möchte, findet zwei kostenpflichtige Parkplätze in der Nähe:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Rathaus-Parkplatz</strong></a> – die günstigste Option der Gegend</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parkplatz an der Strandpromenade</strong></a></li></ul><p>Straßenparken in Estepona ist kostenlos. Ich stelle mein eigenes Auto meist in einem Bereich ab, der etwa 10 Gehminuten vom Haus entfernt liegt — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>hier klicken für die Wegbeschreibung</a>.</p>",
 supermarkets:"🛒 Supermärkte",
+wifi:"📶 WLAN",
+wifi_network_label:"Netzwerk:",
+wifi_password_label:"Passwort:",
 guide:"📍 Lokaler Guide",
 guide_text:"Unsere Empfehlungen:",
+guide_link1:"Restaurants & Orte",
+guide_link2:"Sehenswürdigkeiten",
 contact:"📞 Kontakt",
 contact_text:"Kontaktieren Sie mich jederzeit.",
-enjoy:"😊 Schönen Aufenthalt!"
+enjoy:"😊 Schönen Aufenthalt!",
+whatsapp_btn:"💬 Gastgeber kontaktieren"
 }
 };
 
 function setLanguage(lang){
+document.documentElement.lang = lang;
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+btn.classList.toggle("active", btn.dataset.lang === lang);
+});
 document.querySelectorAll("[data-i18n]").forEach(el=>{
 el.textContent=t[lang][el.dataset.i18n];
 });
@@ -265,6 +294,15 @@ document.querySelectorAll("[data-i18n-html]").forEach(el=>{
 el.innerHTML=t[lang][el.dataset.i18nHtml];
 });
 }
+
+function detectLanguage(){
+var browserLang = (navigator.language || "en").slice(0,2);
+return t[browserLang] ? browserLang : "en";
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+setLanguage(detectLanguage());
+});
 </script>
 
 </body>
