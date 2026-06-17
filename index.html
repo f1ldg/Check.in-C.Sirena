@@ -42,19 +42,57 @@
     .highlight {
         font-weight: bold;
     }
+    .hero-img {
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        margin: 15px 0 5px 0;
+    }
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 12px;
+        display: block;
+    }
+    .photo-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+    }
+    .photo-row img {
+        flex: 1 1 240px;
+        width: 100%;
+        margin-top: 0;
+    }
+    .photo-caption {
+        font-size: 0.85em;
+        color: #777;
+        margin-top: 4px;
+    }
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
 <h1>🏡 Self Check-in Guide</h1>
+
+<img class="hero-img" src="images/DSC04404.jpg" alt="Flower-lined street with fountain in Estepona old town">
 
 <h2>🔑 Access</h2>
 <div class="card">
 <p>Once you arrive at the house at <strong>C/ Azucena, 6</strong>, the key will be inside the key box.</p>
 <p><span class="highlight">Code to open:</span> *****</p>
+<img src="images/PSPh_3063.jpg" alt="Street view of the house entrance at Calle Azucena 6">
+<p class="photo-caption">This is what the street and front door look like — number 6 is just above the door.</p>
+</div>
+
+<h2>🏠 The House</h2>
+<div class="card">
+<p>A quick look inside before you arrive:</p>
+<div class="photo-row">
+<img src="images/PSPh_3143.jpg" alt="Kitchen and staircase to the upper floor">
+<img src="images/PSPh_3193.jpg" alt="Bedroom with balcony door">
+</div>
 </div>
 
 <h2>📶 Wi-Fi</h2>
@@ -73,13 +111,10 @@
 <p>
 <a href="https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6" target="_blank">Town Hall Parking</a> (most affordable)
 </p>
-
 <p>
 <a href="https://maps.app.goo.gl/Vnp1BmeYDKk326dLA" target="_blank">Beach Promenade Parking</a>
 </p>
-
 <p>Street parking in Estepona is free.</p>
-
 <p>
 I usually park about a 10-minute walk away:<br>
 <a href="https://maps.app.goo.gl/U8qta5Nyz2izJV1s8" target="_blank">Directions here</a>
@@ -102,8 +137,10 @@ I usually park about a 10-minute walk away:<br>
 </div>
 
 <h2>😊 Enjoy your stay!</h2>
-
+<div class="card">
+<img src="images/PSPh_3233.jpg" alt="Balcony and artwork detail inside the house">
 </div>
 
+</div>
 </body>
 </html>
