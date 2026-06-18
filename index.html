@@ -117,10 +117,10 @@ a {
 <h1 data-i18n="title">🏡 Self Check-in Guide</h1>
 
 <div class="lang-switch">
-<button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-<button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
-<button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
-<button class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
+<button class="lang-btn" data-lang="en" onclick="setLanguage('en')">🇬🇧</button>
+<button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸</button>
+<button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷</button>
+<button class="lang-btn" data-lang="de" onclick="setLanguage('de')">🇩🇪</button>
 </div>
 
 <!-- HERO -->
@@ -171,6 +171,7 @@ a {
 <p data-i18n="guide_text"></p>
 <p>👉 <a href="https://maps.app.goo.gl/HMr3f7wAdSFDgdmGA" target="_blank" data-i18n="guide_link1">Restaurants & Spots</a></p>
 <p>👉 <a href="https://maps.app.goo.gl/56Yh8cR3Par8S8hLA" target="_blank" data-i18n="guide_link2">Places to Visit</a></p>
+<p>👉 <a href="https://turismo.estepona.es/agenda/" target="_blank" data-i18n="guide_link3">Events - Estepona Tourist Office</a></p>
 </div>
 
 <h2 data-i18n="contact">📞 Contact</h2>
@@ -209,6 +210,7 @@ guide:"📍 Local Guide",
 guide_text:"Our favorite local spots and places to explore:",
 guide_link1:"Restaurants & Spots",
 guide_link2:"Places to Visit",
+guide_link3:"Events - Estepona Tourist Office",
 contact:"📞 Contact",
 contact_text:"Feel free to contact me anytime during your stay.",
 enjoy:"😊 Enjoy your stay!",
@@ -231,6 +233,7 @@ guide:"📍 Guía Local",
 guide_text:"Nuestros sitios favoritos:",
 guide_link1:"Restaurantes y lugares",
 guide_link2:"Sitios para visitar",
+guide_link3:"Eventos - Oficina de Turismo de Estepona",
 contact:"📞 Contacto",
 contact_text:"Contáctame si necesitas algo.",
 enjoy:"😊 ¡Disfruta tu estancia!",
@@ -253,6 +256,7 @@ guide:"📍 Guide Local",
 guide_text:"Nos recommandations:",
 guide_link1:"Restaurants & lieux",
 guide_link2:"Lieux à visiter",
+guide_link3:"Événements - Office de Tourisme d'Estepona",
 contact:"📞 Contact",
 contact_text:"Contactez-moi à tout moment.",
 enjoy:"😊 Bon séjour !",
@@ -275,315 +279,7 @@ guide:"📍 Lokaler Guide",
 guide_text:"Unsere Empfehlungen:",
 guide_link1:"Restaurants & Orte",
 guide_link2:"Sehenswürdigkeiten",
-contact:"📞 Kontakt",
-contact_text:"Kontaktieren Sie mich jederzeit.",
-enjoy:"😊 Schönen Aufenthalt!",
-whatsapp_btn:"💬 Gastgeber kontaktieren"
-}
-};
-
-function setLanguage(lang){
-document.documentElement.lang = lang;
-document.querySelectorAll(".lang-btn").forEach(btn=>{
-btn.classList.toggle("active", btn.dataset.lang === lang);
-});
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-el.textContent=t[lang][el.dataset.i18n];
-});
-document.querySelectorAll("[data-i18n-html]").forEach(el=>{
-el.innerHTML=t[lang][el.dataset.i18nHtml];
-});
-}
-
-function detectLanguage(){
-var browserLang = (navigator.language || "en").slice(0,2);
-return t[browserLang] ? browserLang : "en";
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-setLanguage(detectLanguage());
-});
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Self Check-in Guide - Estepona</title>
-
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  margin: 0;
-  background: #f2f2f7;
-  color: #1c1c1e;
-}
-
-.container {
-  max-width: 720px;
-  margin: auto;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  font-weight: 600;
-}
-
-h2 {
-  margin-top: 28px;
-  font-size: 1.2em;
-}
-
-.card {
-  background: white;
-  padding: 16px;
-  border-radius: 16px;
-  margin-top: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* HERO IMAGE */
-.hero-img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  margin: 15px 0;
-}
-
-/* SINGLE IMAGES */
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 12px;
-  display: block;
-}
-
-/* INTERIOR GRID (FIXED) */
-.photo-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.photo-row img {
-  flex: 1;
-  min-width: 0;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* LANGUAGE */
-.lang-switch {
-  text-align: center;
-}
-
-.lang-btn {
-  border: none;
-  background: #e5e5ea;
-  padding: 6px 12px;
-  margin: 3px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.lang-btn.active {
-  background: #007aff;
-  color: white;
-}
-
-/* LINKS */
-a {
-  color: #007aff;
-  text-decoration: none;
-}
-
-/* WHATSAPP */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1 data-i18n="title">🏡 Self Check-in Guide</h1>
-
-<div class="lang-switch">
-<button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-<button class="lang-btn" data-lang="es" onclick="setLanguage('es')">ES</button>
-<button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
-<button class="lang-btn" data-lang="de" onclick="setLanguage('de')">DE</button>
-</div>
-
-<!-- HERO -->
-<img class="hero-img" src="images/DSC04404.jpg" alt="House exterior at C/ Azucena 6">
-
-<h2 data-i18n="access">🔑 Access</h2>
-<div class="card">
-<p data-i18n-html="access_text"></p>
-<p data-i18n="access_code"></p>
-<img src="images/PSPh_3063.jpg" alt="Lockbox at the entrance">
-</div>
-
-<h2 data-i18n="house">🏠 The House</h2>
-<div class="card">
-<div class="photo-row">
-<img src="images/PSPh_3143.jpg" alt="Interior view of the house">
-<img src="images/PSPh_3193.jpg" alt="Interior view of the house">
-</div>
-</div>
-
-<h2 data-i18n="wifi">📶 Wi-Fi</h2>
-<div class="card">
-<p><strong data-i18n="wifi_network_label">Network:</strong> Casita</p>
-<p><strong data-i18n="wifi_password_label">Password:</strong> estepona</p>
-</div>
-
-<h2 data-i18n="ac">❄️ Air Conditioning & Heating</h2>
-<div class="card">
-<p data-i18n="ac_text"></p>
-</div>
-
-<h2 data-i18n="parking">🚗 Parking</h2>
-<div class="card">
-<div data-i18n-html="parking_text"></div>
-</div>
-
-<h2 data-i18n="supermarkets">🛒 Supermarkets</h2>
-<div class="card">
-<ul>
-<li><a href="https://maps.app.goo.gl/shTXWpfKMjPco9k18" target="_blank">Carrefour Express</a></li>
-<li><a href="https://maps.app.goo.gl/AXoeSoYBudSyCaXF7" target="_blank">Carrefour Market</a></li>
-<li><a href="https://maps.app.goo.gl/UGKmsryvUuEre7sU6" target="_blank">Supermercado Dia</a></li>
-</ul>
-</div>
-
-<h2 data-i18n="guide">📍 Local Guide</h2>
-<div class="card">
-<p data-i18n="guide_text"></p>
-<p>👉 <a href="https://maps.app.goo.gl/HMr3f7wAdSFDgdmGA" target="_blank" data-i18n="guide_link1">Restaurants & Spots</a></p>
-<p>👉 <a href="https://maps.app.goo.gl/56Yh8cR3Par8S8hLA" target="_blank" data-i18n="guide_link2">Places to Visit</a></p>
-</div>
-
-<h2 data-i18n="contact">📞 Contact</h2>
-<div class="card">
-<p data-i18n="contact_text"></p>
-<p><strong>Leandro</strong> · <a href="tel:+34684335725">+34 684 335 725</a></p>
-</div>
-
-<h2 data-i18n="enjoy">😊 Enjoy your stay!</h2>
-<div class="card">
-<img src="images/PSPh_3233.jpg" alt="Welcoming view of the house">
-</div>
-
-</div>
-
-<a class="whatsapp-btn" href="https://wa.me/34684335725?text=Hi%20Leandro,%20we%20just%20arrived" target="_blank">
-<span data-i18n="whatsapp_btn">💬 Contact host</span>
-</a>
-
-<script>
-const t = {
-en:{
-title:"🏡 Self Check-in Guide",
-access:"🔑 Access",
-access_text:"Once you arrive at <a href='https://maps.app.goo.gl/qNtK6Gj4NhRhA1LY9' target='_blank'><strong>C/ Azucena 6</strong></a>, you will find the key in the lockbox by the entrance.",
-access_code:"The access code will be sent shortly before your arrival.",
-ac:"❄️ Air Conditioning & Heating",
-ac_text:"Please ensure all windows and doors are fully closed when using the air conditioning or heating. Otherwise, the system may shut down automatically. If the red light next to the A/C unit is on, it usually means a window or door is still open.",
-parking:"🚗 Parking",
-parking_text:"<p>Parking around here is easy and mostly free. If you'd rather have a guaranteed spot, there are two paid car parks nearby:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Town Hall Parking</strong></a> – the most affordable option in the area</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Beach Promenade Parking</strong></a></li></ul><p>Street parking in Estepona is free of charge. I usually leave my own car in a spot about a 10-minute walk from the house — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>tap here for directions</a>.</p>",
-supermarkets:"🛒 Supermarkets",
-wifi:"📶 Wi-Fi",
-wifi_network_label:"Network:",
-wifi_password_label:"Password:",
-guide:"📍 Local Guide",
-guide_text:"Our favorite local spots and places to explore:",
-guide_link1:"Restaurants & Spots",
-guide_link2:"Places to Visit",
-contact:"📞 Contact",
-contact_text:"Feel free to contact me anytime during your stay.",
-enjoy:"😊 Enjoy your stay!",
-whatsapp_btn:"💬 Contact host"
-},
-es:{
-title:"🏡 Guía de Check-in",
-access:"🔑 Acceso",
-access_text:"Al llegar a <a href='https://maps.app.goo.gl/qNtK6Gj4NhRhA1LY9' target='_blank'><strong>C/ Azucena 6</strong></a>, encontrarás la llave en la caja de seguridad.",
-access_code:"El código se enviará antes de tu llegada.",
-ac:"❄️ Aire Acondicionado y Calefacción",
-ac_text:"Por favor, asegúrate de que todas las ventanas y puertas estén bien cerradas cuando uses el aire acondicionado o la calefacción. De lo contrario, el sistema podría apagarse automáticamente. Si la luz roja junto al aparato de aire acondicionado está encendida, normalmente significa que una ventana o puerta sigue abierta.",
-parking:"🚗 Aparcamiento",
-parking_text:"<p>Aparcar por la zona es fácil y, en su mayoría, gratuito. Si prefieres tener una plaza garantizada, hay dos parkings de pago cerca:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Parking del Ayuntamiento</strong></a> – la opción más económica de la zona</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parking del Paseo Marítimo</strong></a></li></ul><p>Aparcar en la calle en Estepona es gratis. Yo suelo dejar mi coche en una zona a unos 10 minutos a pie de la casa — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>pulsa aquí para ver cómo llegar</a>.</p>",
-supermarkets:"🛒 Supermercados",
-wifi:"📶 Wi-Fi",
-wifi_network_label:"Red:",
-wifi_password_label:"Contraseña:",
-guide:"📍 Guía Local",
-guide_text:"Nuestros sitios favoritos:",
-guide_link1:"Restaurantes y lugares",
-guide_link2:"Sitios para visitar",
-contact:"📞 Contacto",
-contact_text:"Contáctame si necesitas algo.",
-enjoy:"😊 ¡Disfruta tu estancia!",
-whatsapp_btn:"💬 Contactar al anfitrión"
-},
-fr:{
-title:"🏡 Guide d'arrivée",
-access:"🔑 Accès",
-access_text:"À votre arrivée à <a href='https://maps.app.goo.gl/qNtK6Gj4NhRhA1LY9' target='_blank'><strong>C/ Azucena 6</strong></a>, la clé est dans la boîte.",
-access_code:"Code envoyé avant arrivée.",
-ac:"❄️ Climatisation",
-ac_text:"Merci de vous assurer que toutes les fenêtres et portes sont bien fermées lorsque vous utilisez la climatisation ou le chauffage. Sinon, le système peut s'arrêter automatiquement. Si le voyant rouge situé à côté de l'appareil de climatisation est allumé, cela signifie généralement qu'une fenêtre ou une porte est encore ouverte.",
-parking:"🚗 Stationnement",
-parking_text:"<p>Le stationnement dans le quartier est facile et la plupart du temps gratuit. Si vous préférez une place garantie, deux parkings payants se trouvent à proximité :</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Parking de la Mairie</strong></a> – l'option la plus économique du secteur</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parking du Front de Mer</strong></a></li></ul><p>Le stationnement dans la rue à Estepona est gratuit. Je laisse généralement ma voiture dans un coin à environ 10 minutes à pied de la maison — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>cliquez ici pour l'itinéraire</a>.</p>",
-supermarkets:"🛒 Supermarchés",
-wifi:"📶 Wi-Fi",
-wifi_network_label:"Réseau :",
-wifi_password_label:"Mot de passe :",
-guide:"📍 Guide Local",
-guide_text:"Nos recommandations:",
-guide_link1:"Restaurants & lieux",
-guide_link2:"Lieux à visiter",
-contact:"📞 Contact",
-contact_text:"Contactez-moi à tout moment.",
-enjoy:"😊 Bon séjour !",
-whatsapp_btn:"💬 Contacter l'hôte"
-},
-de:{
-title:"🏡 Check-in Anleitung",
-access:"🔑 Zugang",
-access_text:"Bei Ankunft in <a href='https://maps.app.goo.gl/qNtK6Gj4NhRhA1LY9' target='_blank'><strong>C/ Azucena 6</strong></a> ist der Schlüssel in der Box.",
-access_code:"Code vor Ankunft.",
-ac:"❄️ Klimaanlage",
-ac_text:"Bitte stellen Sie sicher, dass alle Fenster und Türen vollständig geschlossen sind, wenn Sie die Klimaanlage oder die Heizung benutzen. Andernfalls kann sich das System automatisch ausschalten. Wenn die rote Leuchte neben dem Klimagerät leuchtet, bedeutet das normalerweise, dass noch ein Fenster oder eine Tür offen ist.",
-parking:"🚗 Parken",
-parking_text:"<p>Parken in der Umgebung ist unkompliziert und meist kostenlos. Wer einen garantierten Platz möchte, findet zwei kostenpflichtige Parkplätze in der Nähe:</p><ul><li><a href='https://maps.app.goo.gl/VQ4smcrvbXYZjF9i6' target='_blank'><strong>Rathaus-Parkplatz</strong></a> – die günstigste Option der Gegend</li><li><a href='https://maps.app.goo.gl/Vnp1BmeYDKk326dLA' target='_blank'><strong>Parkplatz an der Strandpromenade</strong></a></li></ul><p>Straßenparken in Estepona ist kostenlos. Ich stelle mein eigenes Auto meist in einem Bereich ab, der etwa 10 Gehminuten vom Haus entfernt liegt — <a href='https://maps.app.goo.gl/U8qta5Nyz2izJV1s8' target='_blank'>hier klicken für die Wegbeschreibung</a>.</p>",
-supermarkets:"🛒 Supermärkte",
-wifi:"📶 WLAN",
-wifi_network_label:"Netzwerk:",
-wifi_password_label:"Passwort:",
-guide:"📍 Lokaler Guide",
-guide_text:"Unsere Empfehlungen:",
-guide_link1:"Restaurants & Orte",
-guide_link2:"Sehenswürdigkeiten",
+guide_link3:"Veranstaltungen - Touristenbüro Estepona",
 contact:"📞 Kontakt",
 contact_text:"Kontaktieren Sie mich jederzeit.",
 enjoy:"😊 Schönen Aufenthalt!",
